@@ -1,0 +1,78 @@
+PERSONAL DIARY - SAMPLE RUN
+===========================
+
+This is an illustrative sample run. The exact prompts may differ depending on
+your program's menu and function wording.
+
+Enter password: griffindore
+Welcome to your personal diary.
+
+========== PERSONAL DIARY ==========
+1. Write a new entry
+2. View all entries
+3. Search entries by keyword
+4. Filter entries by date range
+5. Edit an entry
+6. Delete an entry
+7. Mood statistics
+8. Exit
+Enter your choice: 1
+
+Enter date (DD-MM-YYYY): 21-10-2026
+Enter diary title: A productive day
+Enter your mood: Happy
+Enter your diary text (type END to finish):
+Today I practised Python.
+I completed my diary project feature.
+END
+Diary entry saved successfully!
+
+Enter your choice: 2
+
+========== SAVED DIARY ENTRIES ==========
+Entry 1
+Date: 21-10-2026
+Title: A productive day
+Mood: Happy
+Text:
+Today I practised Python.
+I completed my diary project feature.
+
+Enter your choice: 3
+Enter keyword to search: Python
+
+Matching entry:
+Date: 21-10-2026
+Title: A productive day
+Mood: Happy
+Text:
+Today I practised Python.
+I completed my diary project feature.
+
+Enter your choice: 7
+
+Mood Statistics
+Happy: 1
+Okay: 0
+Sad: 0
+Stressed: 0
+Excited: 0
+
+Enter your choice: 8
+Goodbye!
+
+-----------------------------------------
+Example of encrypted storage
+-----------------------------------------
+The readable text:
+Hello World!
+
+With a Caesar shift of 3, the encrypted text is:
+Khoor Zruog!
+
+The diary file stores encrypted text, while the application should display the
+decrypted text when viewing an entry.
+
+Note:
+This sample is illustrative, not a recording of an actual execution. Adjust
+menu labels and prompts to match your final code.
