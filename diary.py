@@ -69,7 +69,7 @@ def read_entries():
                 i += 1
                 details["mood"] = lines[i].rstrip("\n").split(":", 1)[1]
 
-                i += 1  # Skip TEXT_START
+                i += 2  
                 text_lines = []
 
                 while i < len(lines) and lines[i].rstrip("\n") != "TEXT_END":
@@ -91,7 +91,7 @@ def read_entries():
 def write_entry():
     current = input("Enter date (DD-MM-YYYY): ")
     title = input("Enter diary title: ")
-    mood = input("Enter your mood: ")
+    mood = input("Enter your mood [Happy, Okay, Sad, Stressed, Excited]: ")
 
     print("Enter your diary text (type END to finish):")
     text_lines = []
@@ -297,7 +297,7 @@ def edit_entry():
             file.write("TITLE:" + entry["title"] + "\n")
             file.write("MOOD:" + entry["mood"] + "\n")
             file.write("TEXT_START\n")
-            file.write(entry["text"] + "\n")
+            file.write(encrypt(entry["text"]).replace("\n", "~") + "\n")
             file.write("TEXT_END\n")
 
     print("Entry updated successfully!")
@@ -338,14 +338,14 @@ def delete_entry():
     entries.pop(number - 1)
 
     with open("diary.txt", "w") as file:
-        for entry in entries:
-            file.write("ENTRY\n")
-            file.write("DATE:" + entry["date"] + "\n")
-            file.write("TITLE:" + entry["title"] + "\n")
-            file.write("MOOD:" + entry["mood"] + "\n")
-            file.write("TEXT_START\n")
-            file.write(entry["text"] + "\n")
-            file.write("TEXT_END\n")
+            for entry in entries:
+                file.write("ENTRY\n")
+                file.write("DATE:" + entry["date"] + "\n")
+                file.write("TITLE:" + entry["title"] + "\n")
+                file.write("MOOD:" + entry["mood"] + "\n")
+                file.write("TEXT_START\n")
+                file.write(encrypt(entry["text"]).replace("\n", "~") + "\n")
+                file.write("TEXT_END\n")
 
     print("Entry deleted successfully!")
 
